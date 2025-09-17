@@ -1,6 +1,6 @@
 import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createHashRouter, RouterProvider } from "react-router";
 import "./index.css";
 import App from "./App.jsx";
 import Info from "./components/Info.jsx";
@@ -37,7 +37,7 @@ function DataProvider({ children }) {
   );
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <RootLayout />,
