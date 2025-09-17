@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(47, 40, 67);
+  margin-bottom: 2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: var(--colorHeader);
+}
+
+.title-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--colorText);
+  /* border: 2px solid green; */
+}

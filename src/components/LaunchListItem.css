@@ -1,0 +1,79 @@
+.launch-list-item {
+  display: flex;
+  flex-direction: column;
+  color: var(--colorText);
+  width: 75%;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 1px solid var(--colorBorder);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(23, 23, 23);
+}
+
+.launch-list-item a {
+  color: var(--colorLinkText);
+  text-decoration: underline;
+  font-size: small;
+}
+
+.launch-list-item__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.launch-list-item__title {
+  color: var(--colorText);
+  font-size: large;
+}
+
+.launch-list-item__agency-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.launch-list-item__agency-title {
+  color: var(--colorAgencyTitle);
+  font-size: medium;
+}
+
+.launch-list-item__agency-info-button {
+  align-self: flex-end;
+  padding: 0rem;
+  color: var(--colorLinkText);
+  text-decoration-line: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: small;
+}
+
+.launch-list-item__info-grid-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.launch-list-item__info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 2;
+}
+
+.launch-list-item__info-pair {
+  width: 100%;
+}
+
+.launch-list-item__info-title {
+  color: var(--colorHeadlineText);
+}
+
+.launch-list-item__thumbnail {
+  align-self: center;
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--colorBorder);
+}
