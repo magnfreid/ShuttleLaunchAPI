@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router";
 import "./Info.css";
 import { useContext } from "react";
 import { DataContext } from "../data/context";
+import InfoPair from "./InfoPair";
 
 function Info() {
   const { data } = useContext(DataContext);
@@ -14,22 +15,10 @@ function Info() {
       <h2 className="info__agency">{agency.name}</h2>
       <div className="info__row">
         <div className="info__row-left">
-          <div className="info__pair">
-            <p className="info__title">Country:</p>
-            <p>{agency.country}</p>
-          </div>
-          <div className="info__pair">
-            <p className="info__title">Type:</p>
-            <p>{agency.type}</p>
-          </div>
-          <div className="info__pair">
-            <p className="info__title">Administrator:</p>
-            <p>{agency.administrator}</p>
-          </div>
-          <div className="info__pair">
-            <p className="info__title">Founded:</p>
-            <p>{agency.founded}</p>
-          </div>
+          <InfoPair title={"Country:"} text={agency.country} />
+          <InfoPair title={"Type:"} text={agency.type} />
+          <InfoPair title={"Administrator:"} text={agency.administrator} />
+          <InfoPair title={"Founded:"} text={agency.founded} />
         </div>
         <img
           className="info__thumbnail"
@@ -37,75 +26,70 @@ function Info() {
           alt="Company image"
         />
       </div>
-      <div className="info__pair">
-        <p className="info__title">Description:</p>
-        <p>{agency.description}</p>
-      </div>
+      <InfoPair title={"Description:"} text={agency.description} />
 
-      <h3 className="info__section-title">Launch stats:</h3>
       <div className="info__stats-grid">
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Total Launches:</p>
-          <p>{agency.launchStats.totalLaunchCount}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Consecutive Successful Launches:</p>
-          <p>{agency.launchStats.consecutiveSuccessfulLaunches}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Successful Launches:</p>
-          <p>{agency.launchStats.successfulLaunches}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Failed Launches:</p>
-          <p>{agency.launchStats.failedLaunches}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Pending Launches:</p>
-          <p>{agency.launchStats.pendingLaunches}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Consecutive Successful Landings:</p>
-          <p>{agency.launchStats.consecutiveSuccessfulLandings}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Successful Landings:</p>
-          <p>{agency.launchStats.successfulLandings}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Failed Landings:</p>
-          <p>{agency.launchStats.failedLandings}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Attempted Landings:</p>
-          <p>{agency.launchStats.attemptedLandings}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Successful Landings (Spacecraft):</p>
-          <p>{agency.launchStats.successfulLandingsSpacecraft}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Failed Landings (Spacecraft):</p>
-          <p>{agency.launchStats.failedLandingsSpacecraft}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Attempted Landings (Spacecraft):</p>
-          <p>{agency.launchStats.attemptedLandingsSpacecraft}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Successful Landings (Payload):</p>
-          <p>{agency.launchStats.successfulLandingsPayload}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Failed Landings (Payload):</p>
-          <p>{agency.launchStats.failedLandingsPayload}</p>
-        </div>
-        <div className="info__stats-pair">
-          <p className="info__stats-title">Attempted Landings (Payload):</p>
-          <p>{agency.launchStats.attemptedLandingsPayload}</p>
-        </div>
+        <InfoPair
+          title={"Total launches:"}
+          text={agency.launchStats.totalLaunchCount}
+        />
+        <InfoPair
+          title={"Consecutive successful launches:"}
+          text={agency.launchStats.consecutiveSuccessfulLaunches}
+        />
+        <InfoPair
+          title={"Successful launches:"}
+          text={agency.launchStats.successfulLaunches}
+        />
+        <InfoPair
+          title={"Failed launches:"}
+          text={agency.launchStats.failedLaunches}
+        />
+        <InfoPair
+          title={"Pending launches:"}
+          text={agency.launchStats.pendingLaunches}
+        />
+        <InfoPair
+          title={"Consecutive successful landings:"}
+          text={agency.launchStats.consecutiveSuccessfulLandings}
+        />
+        <InfoPair
+          title={"Successful landings:"}
+          text={agency.launchStats.successfulLandings}
+        />
+        <InfoPair
+          title={"Failed landings:"}
+          text={agency.launchStats.failedLandings}
+        />
+        <InfoPair
+          title={"Attempted landings:"}
+          text={agency.launchStats.attemptedLandings}
+        />
+        <InfoPair
+          title={"Successful landings (spacecraft):"}
+          text={agency.launchStats.successfulLandingsSpacecraft}
+        />
+        <InfoPair
+          title={"Failed landings (spacecraft):"}
+          text={agency.launchStats.failedLandingsSpacecraft}
+        />
+        <InfoPair
+          title={"Attempted landings (spacecraft):"}
+          text={agency.launchStats.attemptedLandingsSpacecraft}
+        />
+        <InfoPair
+          title={"Successful landings (payload):"}
+          text={agency.launchStats.successfulLandingsPayload}
+        />
+        <InfoPair
+          title={"Failed landings (payload):"}
+          text={agency.launchStats.failedLandingsPayload}
+        />
+        <InfoPair
+          title={"Attempted landings (payload):"}
+          text={agency.launchStats.attemptedLandingsPayload}
+        />
       </div>
-
       <Link className="info__back-button" to={"/"}>
         Back
       </Link>

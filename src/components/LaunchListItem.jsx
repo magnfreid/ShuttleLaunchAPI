@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import "./LaunchListItem.css";
+import InfoPair from "./InfoPair";
 
 function LaunchListItem({ launch }) {
   return (
@@ -24,16 +25,8 @@ function LaunchListItem({ launch }) {
       {/* INFO GRID */}
       <div className="launch-list-item__info-grid-wrapper">
         <div className="launch-list-item__info-grid">
-          <div className="launch-list-item__info-pair">
-            <p className="launch-list-item__info-title">Date:</p>
-            <p>{launch.launchDate}</p>
-          </div>
-
-          <div className="launch-list-item__info-pair">
-            <p className="launch-list-item__info-title">Status:</p>
-            <p>{launch.status}</p>
-          </div>
-
+          <InfoPair title={"Date:"} text={launch.launchDate} />
+          <InfoPair title={"Status:"} text={launch.status} />
           <div className="launch-list-item__info-pair">
             <p className="launch-list-item__info-title">Launchpad:</p>
             <p>{launch.launchPad.name ?? "Unknown"}</p>
@@ -46,10 +39,10 @@ function LaunchListItem({ launch }) {
               See on map
             </a>
           </div>
-          <div className="launch-list-item__info-pair">
-            <p className="launch-list-item__info-title">Orbit:</p>
-            <p>{`${launch.orbit.celestialBody}, ${launch.orbit.name}`}</p>
-          </div>
+          <InfoPair
+            title={"Orbit:"}
+            text={`${launch.orbit.celestialBody}, ${launch.orbit.name}`}
+          />
         </div>
         {/* Thumbnail*/}
         <img

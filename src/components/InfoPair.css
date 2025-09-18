@@ -1,0 +1,7 @@
+.info-pair {
+  width: 100%;
+}
+
+.info-pair__title {
+  color: var(--colorHeadlineText);
+}
